@@ -1,0 +1,97 @@
+body {
+  font: 12px Helvetica, Arial, sans-serif; }
+
+header {
+  margin: 0 auto; }
+
+.container {
+  margin: 0 auto;
+  width: 730px; }
+
+.chart {
+  margin: 10px auto; }
+
+.map {
+  font-size: 12px;
+  height: 420px;
+  width: 380px;
+  position: absolute;
+  left: 575px;
+  top: 120px; }
+
+.axis path, .axis line {
+  fill: none;
+  stroke: #444;
+  shape-rendering: crispEdges; }
+.axis text {
+  font-size: 12px;
+  color: #444; }
+
+.label {
+  font-weight: bold;
+  color: #444;
+  font-size: 12px;
+  text-align: left;
+  width: 160px;
+  fill: #444; }
+
+.dot {
+  fill: #6992B4;
+  stroke: #333;
+  stroke-width: 1px; }
+  .dot .selected {
+    fill: #FFD658;
+    opacity: 1.0;
+    stroke: #000;
+    stroke-width: 2px;
+    cursor: pointer; }
+
+.tract {
+  fill: #FFF5D5;
+  stroke: #777;
+  cursor: pointer; }
+  .tract .inactive {
+    fill: #EAEAEA;
+    cursor: default; }
+  .tract .selected {
+    opacity: 1.0;
+    color: #111;
+    stroke: #000;
+    stroke-width: 2.5px;
+    fill: #FFD658; }
+
+.violations-container {
+  font-size: 12px;
+  margin-bottom: 30px; }
+
+.tooltip .container {
+  font-size: 12px;
+  background: #fff;
+  border: 2px solid #444;
+  margin: 2px auto;
+  padding: 1px 5px;
+  position: absolute;
+  width: 200px;
+  display: none;
+  z-index: 999;
+  box-shadow: 3px 3px 6px 1px #888; }
+.tooltip .arrow-border {
+  border-color: #444 transparent transparent transparent;
+  border-style: solid;
+  border-width: 10px;
+  height: 0;
+  width: 0;
+  position: absolute;
+  bottom: -22px;
+  left: 100px; }
+.tooltip .arrow {
+  border-color: #fff transparent transparent transparent;
+  border-style: solid;
+  border-width: 10px;
+  height: 0;
+  width: 0;
+  position: absolute;
+  bottom: -19px;
+  left: 100px; }
+.tooltip p {
+  margin: 7px 1px; }

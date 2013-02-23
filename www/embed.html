@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="robots" content="noindex, nofollow">
+    <!--[if lt IE 9]>
+      <script type="text/javascript" src="js/aight.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+      <script type="text/javascript" src="js/aight.js"></script>
+    <![endif]-->
+    <title>Attempt 4</title>
+    <link rel="stylesheet" type="text/css" href="css/app.css">
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>A License to Blight</h1>
+        <p>
+         Tax delinquent landlords and speculators are the biggest source of blight in Philadelphia, racking up property maintenance and vacant land violations at a far higher rate than tax-compliant property owners.
+        </p>
+        <p style="width: 70%;">
+          This link between tax delinquency and irresponsible property ownership is particularly pronounced in low-income neighborhoods, where investors are often able to hold onto property for years, even decades, without paying taxes or complying with city-issued orders to clean up their land.
+        </p>
+        <p style="width: 40%;">
+          The chart below links delinquency data with city violations issued over the past year for a number of key quality of life categories, including property maintenance, vacant land and city-funded demolitions of dangerous properties. In each category, the correlation between delinquency and blight is strong.
+        </p>
+      </header>
+
+      <section>
+        <p class="label">Percent Investor-owned, Tax Delinquent Properties</p>
+        <div class="tooltip container">
+          <p class="content"> </p>
+          <div class="tooltip arrow-border"></div>
+          <div class="tooltip arrow"></div>
+        </div>
+        <div class="chart">
+          <div class="map"></div>
+        </div>
+        <div class="violations-container">
+          <strong>View:</strong>
+          <input type="radio" name="violations" value="perc_viol" checked="true"/>All
+          <input type="radio" name="violations" value="perc_prop"/>Property Maintenance
+          <input type="radio" name="violations" value="perc_vaca"/>Vacancy 
+          <input type="radio" name="violations" value="perc_rent"/>Rental
+          <input type="radio" name="violations" value="perc_lide"/>L &amp; I Demolitions
+        </div>
+      </section>
+
+      <footer>
+          <cite>
+            <p>By Patrick Kerkstra (PlanPhilly), Casey Thomas (PPIIN)</p>
+            <p>Source: City of Philadelphia, U.S. Census Bureau, American Community Survey, PlanPhilly/PPIIN Analysis</p>
+          </cite>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script type="text/javascript" src="js/lib/d3.min.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        app.run();
+      });
+    </script>
+  </body>
+</html>
