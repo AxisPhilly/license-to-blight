@@ -9,7 +9,7 @@ A somewhat barebones template for apps without back-ends. Inpsired by the NPR Ap
 - `scripts` -  Miscellaneous scripts used for data processing, etc.
 
 ### Dependencies
-For asset management, templating and testing, we use Node.js and [Grunt](http://www.gruntjs.com)
+For asset management, templating, building, and testing, we use Node.js and [Grunt](http://www.gruntjs.com)
 
 First, you need [Grunt](https://github.com/gruntjs/grunt-cli) command line tool:
 `$ npm install -g grunt-cli`
