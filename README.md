@@ -17,7 +17,7 @@ Then, install the dev depencies:
 `$ npm install`
 
 ### Compile SASS when developing
-`$ sass --watch sass/*:www/css/*`
+`$ sass --watch sass/:www/css/`
 
 ### Grunt Tasks
 
