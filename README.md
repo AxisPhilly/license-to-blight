@@ -1,5 +1,5 @@
 # AxisPhilly App Template
-A somewhat barebones template for apps without back-ends. Inpsired by the NPR Apps [app template](https://github.com/nprapps/app-template)
+A somewhat barebones template for apps without back-ends. Inspired by the NPR Apps [app template](https://github.com/nprapps/app-template).
 
 ### Directory Structure
 
