@@ -1,6 +1,13 @@
 # AxisPhilly App Template
 A somewhat barebones app template. Inpsired by the NPR Apps [app template](https://github.com/nprapps/app-template)
 
+### Directory Structure
+
+`sass` - .scss files go here
+`www` - The compiled app and associated files
+`data` - Raw data used in the app, i.e. CSVs
+`scripts` -  Miscellaneous scripts used for data processing, etc.
+
 ### Dependencies
 For asset management, templating and testing, we use Node.js and [Grunt](http://www.gruntjs.com)
 
