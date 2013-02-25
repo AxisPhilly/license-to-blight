@@ -28,5 +28,7 @@ Compile SASS into CSS
 `$ grunt compass`
 
 Build assets for deployment
-`$ grunt deploy`
+`$ grunt build`
 
+Deploy app
+`$ grunt deploy`
