@@ -1,23 +1,11 @@
-body {
-  font: 12px Helvetica, Arial, sans-serif; }
+body p {
+  font-size: 16px; }
 
-header {
-  margin: 0 auto; }
-
-.container {
-  margin: 0 auto;
-  width: 730px; }
+.row {
+  max-width: 750px; }
 
 .chart {
   margin: 10px auto; }
-
-.map {
-  font-size: 12px;
-  height: 420px;
-  width: 380px;
-  position: absolute;
-  left: 575px;
-  top: 120px; }
 
 .axis path, .axis line {
   fill: none;
@@ -39,7 +27,7 @@ header {
   fill: #6992B4;
   stroke: #333;
   stroke-width: 1px; }
-  .dot .selected {
+  .dot.selected {
     fill: #FFD658;
     opacity: 1.0;
     stroke: #000;
@@ -50,10 +38,10 @@ header {
   fill: #FFF5D5;
   stroke: #777;
   cursor: pointer; }
-  .tract .inactive {
+  .tract.inactive {
     fill: #EAEAEA;
     cursor: default; }
-  .tract .selected {
+  .tract.selected {
     opacity: 1.0;
     color: #111;
     stroke: #000;
@@ -64,8 +52,9 @@ header {
   font-size: 12px;
   margin-bottom: 30px; }
 
-.tooltip .container {
-  font-size: 12px;
+.hover p {
+  font-size: 12px; }
+.hover.container {
   background: #fff;
   border: 2px solid #444;
   margin: 2px auto;
@@ -74,8 +63,8 @@ header {
   width: 200px;
   display: none;
   z-index: 999;
-  box-shadow: 3px 3px 6px 1px #888; }
-.tooltip .arrow-border {
+  box-shadow: 1px 1px 2px 1px #ccc; }
+.hover.arrow-border {
   border-color: #444 transparent transparent transparent;
   border-style: solid;
   border-width: 10px;
@@ -84,7 +73,7 @@ header {
   position: absolute;
   bottom: -22px;
   left: 100px; }
-.tooltip .arrow {
+.hover.arrow {
   border-color: #fff transparent transparent transparent;
   border-style: solid;
   border-width: 10px;
@@ -93,5 +82,5 @@ header {
   position: absolute;
   bottom: -19px;
   left: 100px; }
-.tooltip p {
+.hover p {
   margin: 7px 1px; }

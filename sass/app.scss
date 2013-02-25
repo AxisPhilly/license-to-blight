@@ -1,27 +1,15 @@
 body {
-  font: 12px Helvetica, Arial, sans-serif;
+  p {
+    font-size: 16px;
+  }
 }
 
-header {
-  margin: 0 auto;
-}
-
-.container {
-  margin: 0 auto;
-  width: 730px;
+.row {
+  max-width: 750px;
 }
 
 .chart {
   margin: 10px auto;
-}
-
-.map {
-  font-size: 12px;
-  height: 420px;
-  width: 380px;
-  position: absolute;
-  left: 575px;
-  top: 120px;
 }
 
 .axis {
@@ -51,7 +39,7 @@ header {
   stroke: #333;
   stroke-width: 1px;
   
-  .selected {
+  &.selected {
     fill: #FFD658;
     opacity: 1.0;
     stroke: #000;
@@ -65,11 +53,12 @@ header {
   stroke: #777;
   cursor: pointer;
 
-  .inactive {
+  &.inactive {
     fill: #EAEAEA;
     cursor: default;
   }
-  .selected {
+
+  &.selected {
     opacity: 1.0;
     color: #111;
     stroke: #000;
@@ -83,10 +72,12 @@ header {
   margin-bottom: 30px;
 }
 
-.tooltip {
-
-  .container {
+.hover {
+  p {
     font-size: 12px;
+  }
+
+  &.container {
     background: #fff;
     border: 2px solid #444;
     margin: 2px auto;
@@ -95,10 +86,10 @@ header {
     width: 200px;
     display: none;
     z-index: 999;
-    box-shadow: 3px 3px 6px 1px #888;
+    box-shadow: 1px 1px 2px 1px #ccc;
   }
 
-  .arrow-border {
+  &.arrow-border {
     border-color: #444 transparent transparent transparent;
     border-style: solid;
     border-width: 10px;
@@ -109,7 +100,7 @@ header {
     left: 100px;
   }
 
-  .arrow {
+  &.arrow {
     border-color: #fff transparent transparent transparent;
     border-style: solid;
     border-width: 10px;

@@ -10,54 +10,66 @@
     <!--[if lt IE 8]>
       <script type="text/javascript" src="js/lib/aight.js"></script>
     <![endif]-->
-    <title>Attempt 4</title>
+    <title>A License to Blight | AxisPhilly</title>
+    <link rel="stylesheet" href="css/foundation.min.css" type="text/css">
     <link rel="stylesheet" type="text/css" href="css/app.css">
   </head>
   <body>
-    <div class="container">
-      <header>
-        <h1>A License to Blight</h1>
+    <header class="row">
+      <h2 class="twelve columns">A License to Blight</h2>
+    </header>
+
+    <section class="row">
+      <div class="twelve columns">
         <p>
-         Tax delinquent landlords and speculators are the biggest source of blight in Philadelphia, racking up property maintenance and vacant land violations at a far higher rate than tax-compliant property owners.
+        Tax delinquent landlords and speculators are the biggest source of blight in Philadelphia, racking up property maintenance and vacant land violations at a far higher rate than tax-compliant property owners.
         </p>
-        <p style="width: 70%;">
+        <p>
           This link between tax delinquency and irresponsible property ownership is particularly pronounced in low-income neighborhoods, where investors are often able to hold onto property for years, even decades, without paying taxes or complying with city-issued orders to clean up their land.
         </p>
-        <p style="width: 40%;">
+      </div>
+    </section>
+
+    <section class="row">
+      <div class="five columns">
+        <p>
           The chart below links delinquency data with city violations issued over the past year for a number of key quality of life categories, including property maintenance, vacant land and city-funded demolitions of dangerous properties. In each category, the correlation between delinquency and blight is strong.
         </p>
-      </header>
+        <div class="chart"></div>
+      </div>
+      <div id="map" class="seven columns"></div>
+    </section>
 
-      <section>
-        <p class="label">Percent Investor-owned, Tax Delinquent Properties</p>
-        <div class="tooltip container">
-          <p class="content"> </p>
-          <div class="tooltip arrow-border"></div>
-          <div class="tooltip arrow"></div>
-        </div>
-        <div class="chart">
-          <div class="map"></div>
-        </div>
-        <div class="violations-container">
-          <strong>View:</strong>
-          <input type="radio" name="violations" value="perc_viol" checked="true"/>All
-          <input type="radio" name="violations" value="perc_prop"/>Property Maintenance
-          <input type="radio" name="violations" value="perc_vaca"/>Vacancy 
-          <input type="radio" name="violations" value="perc_rent"/>Rental
-          <input type="radio" name="violations" value="perc_lide"/>L &amp; I Demolitions
-        </div>
-      </section>
+    <section class="row"> 
+      <div class="hover container">
+        <p class="content"> </p>
+        <div class="hover arrow-border"></div>
+        <div class="hover arrow"></div>
+      </div>
+      
+      <div class="twevle columns violations-container">
+        <strong>View:</strong>
+        <input type="radio" name="violations" value="perc_viol" checked="true"/>All
+        <input type="radio" name="violations" value="perc_prop"/>Property Maintenance
+        <input type="radio" name="violations" value="perc_vaca"/>Vacancy 
+        <input type="radio" name="violations" value="perc_rent"/>Rental
+        <input type="radio" name="violations" value="perc_lide"/>L &amp; I Demolitions
+      </div>
+    </section>
 
-      <footer>
-          <cite>
-            <p>By Patrick Kerkstra (PlanPhilly), Casey Thomas (PPIIN)</p>
-            <p>Source: City of Philadelphia, U.S. Census Bureau, American Community Survey, PlanPhilly/PPIIN Analysis</p>
-          </cite>
-      </footer>
-    </div>
+    <footer class="row">
+      <div class="twelve columns">
+        <hr>
+        <cite>
+          Source: City of Philadelphia, U.S. Census Bureau, American Community Survey; Analysis: Patrick Kerkstra (<a href="http://www.planphilly.com">PlanPhilly</a>) and Casey Thomas (<a href="http://www.axisphilly.org">AxisPhilly</a>); Reporting: Patrick Kerkstra (<a href="http://www.planphilly.com">PlanPhilly</a>); Application: Casey Thomas (<a href="http://www.axisphilly.org">AxisPhilly</a>)
+        </cite>
+        <br><br><br>
+      </div>
+    </footer>
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
     <script type="text/javascript" src="js/lib/d3.min.js"></script>
+    <script type="text/javascript" src="js/lib/topojson.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
     <script type="text/javascript">
       $(document).ready(function(){
