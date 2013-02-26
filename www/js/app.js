@@ -102,6 +102,34 @@ app.util.getClass = function(value) {
   return colorClass;
 };
 
+app.legendItems = [
+  {
+    className: "step-zero",
+    range: "N/A",
+    x: 0
+  },
+  {
+    className: "step-one",
+    range: "0%",
+    x: 30
+  },
+  {
+    className: "step-two",
+    range: "10%",
+    x: 112
+  },
+  {
+    className: "step-three",
+    range: "20%",
+    x: 178
+  },
+  {
+    className: "step-four",
+    range: "30%",
+    x: 240
+  }
+];
+
 app.run = function() {
   $(".violations-container :input").click(function(){
     app.util.updateRadii();
@@ -217,6 +245,7 @@ app.run = function() {
       .attr("class", "y axis")
       .call(app.config.yAxis);
 
+    // Annotate the chart
     app.chart.append("text")
       .attr("class", "label")
       .text("Median Income ($)")
@@ -245,26 +274,39 @@ app.run = function() {
       .attr("class", "note")
       .text("Each circle represents a census tract.")
       .attr("x", 400)
-      .attr("y", 300);
+      .attr("y", 275);
 
     app.chart.append("text")
       .attr("class", "note")
       .text("The larger the circle, the higher the percent of")
       .attr("x", 400)
-      .attr("y", 315);
+      .attr("y", 298);
 
     app.chart.append("text")
       .attr("class", "note")
       .text("properties in that tract that have recieved one or")
       .attr("x", 400)
-      .attr("y", 330);
+      .attr("y", 312);
 
     app.chart.append("text")
       .attr("class", "note")
-      .text("more of the selected violations.")
+      .text("more of the selected violation(s).")
       .attr("x", 400)
-      .attr("y", 345);
+      .attr("y", 326);
 
+    app.chart.append("text")
+      .attr("class", "note")
+      .text("Tracts with less than 100 properties, ")
+      .attr("x", 400)
+      .attr("y", 350);
+
+    app.chart.append("text")
+      .attr("class", "note")
+      .text("or with $0 in median income have been excluded.")
+      .attr("x", 400)
+      .attr("y", 365);
+
+    // Add the data to the chart.
     app.chart.selectAll(".dot")
       .data(app.fData)
       .enter()
