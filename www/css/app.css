@@ -25,7 +25,7 @@ body p {
 
 .dot {
   fill: #6992B4;
-  stroke: #333;
+  stroke: #444;
   stroke-width: 1px; }
   .dot.selected {
     fill: #FFD658;
@@ -36,7 +36,8 @@ body p {
 
 .tract {
   fill: #FFF5D5;
-  stroke: #777;
+  stroke: #444;
+  stroke-width: 1px;
   cursor: pointer; }
   .tract.inactive {
     fill: #EAEAEA;
@@ -45,45 +46,27 @@ body p {
     opacity: 1.0;
     color: #111;
     stroke: #000;
-    stroke-width: 2.5px;
+    stroke-width: 2px;
     fill: #FFD658; }
 
 .violations-container {
   font-size: 12px;
   margin-bottom: 30px; }
 
-.hover p {
-  font-size: 12px; }
-.hover.container {
-  background: #fff;
-  border: 2px solid #444;
-  margin: 2px auto;
-  padding: 1px 5px;
-  position: absolute;
-  width: 300px;
-  display: none;
-  z-index: 999;
-  box-shadow: 1px 1px 2px 1px #ccc; }
-.hover.arrow-border {
-  border-color: #444 transparent transparent transparent;
-  border-style: solid;
-  border-width: 10px;
-  height: 0;
-  width: 0;
-  position: absolute;
-  bottom: -22px;
-  left: 100px; }
-.hover.arrow {
-  border-color: #fff transparent transparent transparent;
-  border-style: solid;
-  border-width: 10px;
-  height: 0;
-  width: 0;
-  position: absolute;
-  bottom: -19px;
-  left: 100px; }
-.hover p {
-  margin: 7px 1px; }
+.step-zero {
+  fill: #ccc; }
+
+.step-one {
+  fill: #BDD7E7; }
+
+.step-two {
+  fill: #6BAED6; }
+
+.step-three {
+  fill: #3182BD; }
+
+.step-four {
+  fill: #08519C; }
 
 .arrow_box {
   position: absolute;

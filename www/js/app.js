@@ -78,6 +78,30 @@ app.util.updateRadii = function() {
     });
 };
 
+app.util.getClass = function(value) {
+  var colorClass = '';
+  
+  switch(true) {
+    case (value === 0):
+      colorClass = 'step-zero';
+      break;
+    case (value > 0) && (value < 0.10):
+      colorClass = 'step-one';
+      break;
+    case (value >= 0.10) && (value < 0.20):
+      colorClass = 'step-two';
+      break;
+    case (value >= 0.20) && (value < 0.30):
+      colorClass = 'step-three';
+      break;
+    case (value >= 0.30):
+      colorClass = 'step-four';
+      break;
+  }
+
+  return colorClass;
+};
+
 app.run = function() {
   $(".violations-container :input").click(function(){
     app.util.updateRadii();
@@ -86,6 +110,8 @@ app.run = function() {
   d3.json("data/tracts-data.json", function(error, data){
     app.data = data;
     app.fData = app.util.Filter(app.data);
+    app.currentTractClass = '';
+    app.currentDotClass = '';
 
     // Map
     app.map = {};
@@ -109,12 +135,19 @@ app.run = function() {
         .enter().append("path")
           .attr("d", app.map.path)
           .attr("class", function(d) {
-            for(var i=0; i<app.removedTracts.length; i++) {
+            var i;
+
+            for(i=0; i<app.removedTracts.length; i++) {
               if (d.id === String(app.removedTracts[i])) {
                 return 'tract inactive';
               }
             }
-            return 'tract';
+
+            for (i=0; i<app.fData.length; i++){
+              if(d.id == (String(app.fData[i].name))) {
+                return 'tract ' + app.util.getClass(app.fData[i].perc_inv);
+              }
+            }
           })
           .attr("id", function(d) {
             return 't' + String(d.id).replace('.','dot');
@@ -122,20 +155,21 @@ app.run = function() {
           .on("mouseover", function(d) {
             if (d3.select(this).attr("class") === "tract inactive") { return false; }
 
+            app.currentTractClass = d3.select(this).attr("class");
             d3.select(this).attr("class", "tract selected");
+            
             var id = '#d' + String(d.id).replace('.','dot');
-            var dot = d3.select(id)
-              .attr("class", "dot selected");
+            app.currentDotClass = d3.select(id).attr("class");
+            var dot = d3.select(id).attr("class", "dot selected");
+            
             app.util.showTooltip(app.util.getProps(id), dot[0][0]);
           })
           .on("mouseout", function(d) {
-            if (d3.select(this).attr("class") === "tract inactive") {
-              return;
-            }
-            d3.select(this).attr("class", "tract");
-            app.tractClass = '';
+            if (d3.select(this).attr("class") === "tract inactive") { return false; }
+            
+            d3.select(this).attr("class", app.currentTractClass);
             d3.select('#d' + String(d.id).replace('.','dot'))
-              .attr("class", "dot");
+              .attr("class", app.currentDotClass);
             app.util.hideTooltip();
           });
     });
@@ -204,7 +238,9 @@ app.run = function() {
       .data(app.fData)
       .enter()
       .append("circle")
-      .attr("class", "dot")
+      .attr("class", function(d){
+        return "dot " + app.util.getClass(d.perc_inv);
+      })
       .attr("id", function(d) {
         return 'd' + String(d.name).replace(".", "dot");
       })
@@ -214,15 +250,16 @@ app.run = function() {
           return Math.sqrt((d.perc_viol / Math.PI) * 1500);
       })
       .on("mouseover", function(d) {
+        app.currentDotClass = d3.select(this).attr("class");
         d3.select(this).attr("class", "dot selected");
-        d3.select('#t' + String(d.name).replace(".", "dot"))
-          .attr("class", "tract selected");
+
+        app.currentTractClass = d3.select('#t' + String(d.name).replace(".", "dot")).attr("class");
+        d3.select('#t' + String(d.name).replace(".", "dot")).attr("class", "tract selected");
         app.util.showTooltip(d, this);
       })
       .on("mouseout", function(d) {
-        d3.select(this).attr("class", "dot");
-        d3.select('#t' + String(d.name).replace(".", "dot"))
-            .attr("class", "tract");
+        d3.select(this).attr("class", app.currentDotClass);
+        d3.select('#t' + String(d.name).replace(".", "dot")).attr("class", app.currentTractClass);
         app.util.hideTooltip();
       });
   });

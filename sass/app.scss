@@ -36,7 +36,7 @@ body {
 
 .dot {
   fill: #6992B4;
-  stroke: #333;
+  stroke: #444;
   stroke-width: 1px;
   
   &.selected {
@@ -50,7 +50,8 @@ body {
 
 .tract {
   fill: #FFF5D5;
-  stroke: #777;
+  stroke: #444;
+  stroke-width: 1px;
   cursor: pointer;
 
   &.inactive {
@@ -62,7 +63,7 @@ body {
     opacity: 1.0;
     color: #111;
     stroke: #000;
-    stroke-width: 2.5px;
+    stroke-width: 2px;
     fill: #FFD658;
   }
 }
@@ -72,48 +73,24 @@ body {
   margin-bottom: 30px;
 }
 
-.hover {
-  p {
-    font-size: 12px;
-  }
+.step-zero {
+  fill: #ccc;
+}
 
-  &.container {
-    background: #fff;
-    border: 2px solid #444;
-    margin: 2px auto;
-    padding: 1px 5px;
-    position: absolute;
-    width: 300px;
-    display: none;
-    z-index: 999;
-    box-shadow: 1px 1px 2px 1px #ccc;
-  }
+.step-one {
+  fill: #BDD7E7;
+}
 
-  &.arrow-border {
-    border-color: #444 transparent transparent transparent;
-    border-style: solid;
-    border-width: 10px;
-    height: 0;
-    width: 0;
-    position: absolute;
-    bottom: -22px;
-    left: 100px;
-  }
+.step-two {
+  fill: #6BAED6;
+}
 
-  &.arrow {
-    border-color: #fff transparent transparent transparent;
-    border-style: solid;
-    border-width: 10px;
-    height: 0;
-    width: 0;
-    position: absolute;
-    bottom: -19px;
-    left: 100px;
-  }
+.step-three {
+  fill: #3182BD;
+}
 
-  p {
-  margin: 7px 1px;
-  }
+.step-four {
+  fill: #08519C;
 }
 
 .arrow_box {
