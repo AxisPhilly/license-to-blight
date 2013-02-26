@@ -35,16 +35,18 @@ app.util.getHTML = function(props) {
 
 app.util.showTooltip = function(props, element) {
   if (app.tractClass === 'tract inactive') { return false; }
-  var html = app.util.getHTML(props);
+  
+  var html = app.util.getHTML(props),
+      offset = $(element).offset();
 
-  $(".hover.container").css({
-    left: $(element).position().left + 144 + element.r.baseVal.value,
-    top: $(element).position().top + 30
+  $(".arrow_box").css({
+    left: offset.left - 124 + element.r.baseVal.value,
+    top: offset.top + 60
   }).show().find(".content").html(html);
 };
 
 app.util.hideTooltip = function() {
-  $(".hover.container").hide();
+  $(".arrow_box").hide();
 };
 
 app.util.getProps = function(id) {

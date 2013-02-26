@@ -1,5 +1,5 @@
 body p {
-  font-size: 16px; }
+  font-size: 14px; }
 
 .row {
   max-width: 750px; }
@@ -60,7 +60,7 @@ body p {
   margin: 2px auto;
   padding: 1px 5px;
   position: absolute;
-  width: 200px;
+  width: 300px;
   display: none;
   z-index: 999;
   box-shadow: 1px 1px 2px 1px #ccc; }
@@ -84,3 +84,38 @@ body p {
   left: 100px; }
 .hover p {
   margin: 7px 1px; }
+
+.arrow_box {
+  position: absolute;
+  background: #ffffff;
+  border: 2px solid #343d42;
+  display: none;
+  padding: 10px;
+  width: 250px;
+  z-index: 999; }
+  .arrow_box p {
+    margin: 0;
+    font-size: 12px; }
+
+.arrow_box:after, .arrow_box:before {
+  bottom: 100%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none; }
+
+.arrow_box:after {
+  border-color: rgba(255, 255, 255, 0);
+  border-bottom-color: #ffffff;
+  border-width: 30px;
+  left: 50%;
+  margin-left: -30px; }
+
+.arrow_box:before {
+  border-color: rgba(32, 37, 41, 0);
+  border-bottom-color: #202529;
+  border-width: 33px;
+  left: 50%;
+  margin-left: -33px; }
