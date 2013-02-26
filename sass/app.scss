@@ -63,13 +63,12 @@ body {
     opacity: 1.0;
     color: #111;
     stroke: #000;
-    stroke-width: 2px;
+    stroke-width: 1px;
     fill: #FFD658;
   }
 }
 
 .violations-container{
-  font-size: 12px;
   margin-bottom: 30px;
 }
 
@@ -93,6 +92,11 @@ body {
   fill: #08519C;
 }
 
+.note {
+  fill: #666;
+  font-size: 12px;
+}
+
 .arrow_box {
   position: absolute;
   background: #ffffff;
@@ -103,7 +107,7 @@ body {
   z-index: 999;
 
   p {
-    margin: 0;
+    margin: 4px 0;
     font-size: 11px;
   }
 }

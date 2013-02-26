@@ -5,8 +5,8 @@ if (typeof app === 'undefined' || !app) {
 // Namespace for utility functions
 app.util = {};
 
-app.activeViol = 'perc_viol';
-app.removedTracts = [];
+app.activeViol = 'perc_viol'; // Active section in radio button set
+app.removedTracts = []; // Tracks that don't meet filter specified in app.util.Filter
 
 app.util.Filter = function(data) {
   var filteredData = [];
@@ -29,8 +29,8 @@ app.util.getHTML = function(props) {
 
     return "<strong>Tract " + props.name + "</strong>" +
            "<p>Median Income: " + med_inc + "</p>" +
-           "<p>Properties with 1 or more violations within past 365 days: " + viol + "</p>" +
-           "<p>Investor-owned, tax delinquent properties: " + delinq + "</p>";
+           "<p>Properties with one or more violation(s) from August, 2011 to August, 2012: " + viol + "</p>" +
+           "<p>Percent of properties that are investor-owned and tax delinquent: " + delinq + "</p>";
 };
 
 app.util.showTooltip = function(props, element) {
@@ -176,9 +176,9 @@ app.run = function() {
 
     // Chart
     app.config = {};
-    app.config.margin = {top: 40, right: 40, bottom: 60, left: 40};
+    app.config.margin = {top: 60, right: 40, bottom: 60, left: 40};
     app.config.width = 730 - app.config.margin.left - app.config.margin.right;
-    app.config.height = 500 - app.config.margin.top - app.config.margin.bottom;
+    app.config.height = 530 - app.config.margin.top - app.config.margin.bottom;
 
     app.config.x = d3.scale.linear()
       .domain([0, 130000])
@@ -191,6 +191,7 @@ app.run = function() {
     app.config.xAxis = d3.svg.axis()
       .scale(app.config.x)
       .ticks(6)
+      .tickFormat(d3.format(",.0f"))
       .orient("bottom");
 
     app.config.yAxis = d3.svg.axis()
@@ -218,21 +219,51 @@ app.run = function() {
 
     app.chart.append("text")
       .attr("class", "label")
-      .text("Median Income")
+      .text("Median Income ($)")
       .attr("x", 10)
       .attr("y", 445);
 
     app.chart.append("text")
       .attr("class", "label")
-      .text("Percent of Properties that are Investor-owned")
+      .text("Percent of Properties")
       .attr("x", -40)
-      .attr("y", -30);
+      .attr("y", -50);
+
+    app.chart.append("text")
+      .attr("class", "label")
+      .text("that are Investor-owned")
+      .attr("x", -40)
+      .attr("y", -35);
 
     app.chart.append("text")
       .attr("class", "label")
       .text("and Tax Delinquent")
       .attr("x", -40)
-      .attr("y", -15);
+      .attr("y", -20);
+
+    app.chart.append("text")
+      .attr("class", "note")
+      .text("Each circle represents a census tract.")
+      .attr("x", 400)
+      .attr("y", 300);
+
+    app.chart.append("text")
+      .attr("class", "note")
+      .text("The larger the circle, the higher the percent of")
+      .attr("x", 400)
+      .attr("y", 315);
+
+    app.chart.append("text")
+      .attr("class", "note")
+      .text("properties in that tract that have recieved one or")
+      .attr("x", 400)
+      .attr("y", 330);
+
+    app.chart.append("text")
+      .attr("class", "note")
+      .text("more of the selected violations.")
+      .attr("x", 400)
+      .attr("y", 345);
 
     app.chart.selectAll(".dot")
       .data(app.fData)
