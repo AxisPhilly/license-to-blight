@@ -30,7 +30,7 @@ app.util.getHTML = function(props) {
     return "<strong>Tract " + props.name + "</strong>" +
            "<p>Median Income: " + med_inc + "</p>" +
            "<p>Properties with one or more violation(s) from August, 2011 to August, 2012: " + viol + "</p>" +
-           "<p>Percent of properties that are investor-owned and tax delinquent: " + delinq + "</p>";
+           "<p>Properties that are investor-owned and tax delinquent: " + delinq + "</p>";
 };
 
 app.util.showTooltip = function(props, element) {
