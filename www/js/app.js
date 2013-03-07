@@ -231,6 +231,10 @@ app.run = function() {
             app.currentDotClass = d3.select(id).attr("class");
             var dot = d3.select(id).attr("class", "dot selected");
 
+            // Move selected dot to front
+            var chart = d3.select(".chart svg g")[0][0];
+            chart.appendChild(dot[0][0]);
+
             app.util.showTooltip(app.util.getProps(id), dot[0][0]);
           })
           .on("mouseout", function(d) {
@@ -378,6 +382,9 @@ app.run = function() {
       .on("mouseover", function(d) {
         app.currentDotClass = d3.select(this).attr("class");
         d3.select(this).attr("class", "dot selected");
+
+        // Move selected dot to front
+        this.parentNode.appendChild(this);
 
         app.currentTractClass = d3.select('#t' + String(d.name).replace(".", "dot")).attr("class");
         d3.select('#t' + String(d.name).replace(".", "dot")).attr("class", "tract selected");
