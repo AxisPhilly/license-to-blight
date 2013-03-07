@@ -229,13 +229,18 @@ app.run = function() {
 
             var id = '#d' + String(d.id).replace('.','dot');
             app.currentDotClass = d3.select(id).attr("class");
+
             var dot = d3.select(id).attr("class", "dot selected");
 
-            // Move selected dot to front
-            var chart = d3.select(".chart svg g")[0][0];
-            chart.appendChild(dot[0][0]);
+            // dot radius goes to 0 if there are no violations
+            if(dot.attr("r") !== '0') {
 
-            app.util.showTooltip(app.util.getProps(id), dot[0][0]);
+              // Move selected dot to front
+              var chart = d3.select(".chart svg g")[0][0];
+              chart.appendChild(dot[0][0]);
+
+              app.util.showTooltip(app.util.getProps(id), dot[0][0]);
+            }
           })
           .on("mouseout", function(d) {
             if (d3.select(this).attr("class") === "tract inactive") { return false; }
