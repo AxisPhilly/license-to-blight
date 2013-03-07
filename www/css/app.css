@@ -53,20 +53,29 @@ body p {
   fill: #ccc; }
 
 .step-one {
-  fill: #BDC9E1; }
+  fill: #BDD7E7; }
 
 .step-two {
-  fill: #74A9CF; }
+  fill: #6BAED6; }
 
 .step-three {
-  fill: #2B8CBE; }
+  fill: #3182BD; }
 
 .step-four {
-  fill: #045A8D; }
+  fill: #08519C; }
 
 .note {
   fill: #666;
   font-size: 12px; }
+
+#legend {
+  font-size: 10px; }
+  #legend .title {
+    font-size: 12px; }
+  #legend line {
+    stroke: #000; }
+  #legend .last {
+    display: none; }
 
 .arrow_box {
   position: absolute;
