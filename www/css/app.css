@@ -25,7 +25,7 @@ body p {
 
 .dot {
   fill: #6992B4;
-  stroke: #fff;
+  stroke: #454545;
   stroke-width: 1px; }
   .dot.selected {
     fill: #FFD658;
@@ -36,7 +36,7 @@ body p {
 
 .tract {
   fill: #FFF5D5;
-  stroke: #fff;
+  stroke: #454545;
   stroke-width: 1px;
   cursor: pointer; }
   .tract.inactive {
@@ -53,16 +53,16 @@ body p {
   fill: #ccc; }
 
 .step-one {
-  fill: #C6DBEF; }
+  fill: #BDC9E1; }
 
 .step-two {
-  fill: #6BAED6; }
+  fill: #74A9CF; }
 
 .step-three {
-  fill: #3182BD; }
+  fill: #2B8CBE; }
 
 .step-four {
-  fill: #08306B; }
+  fill: #045A8D; }
 
 .note {
   fill: #666;
