@@ -35,7 +35,7 @@ app.util.getHTML = function(props) {
 
 app.util.showTooltip = function(props, element) {
   if (app.tractClass === 'tract inactive') { return false; }
-  
+
   var html = app.util.getHTML(props),
       offset = $(element).offset();
 
@@ -80,7 +80,7 @@ app.util.updateRadii = function() {
 
 app.util.getClass = function(value) {
   var colorClass = '';
-  
+
   switch(true) {
     case (value === 0):
       colorClass = 'step-zero';
@@ -185,16 +185,16 @@ app.run = function() {
 
             app.currentTractClass = d3.select(this).attr("class");
             d3.select(this).attr("class", "tract selected");
-            
+
             var id = '#d' + String(d.id).replace('.','dot');
             app.currentDotClass = d3.select(id).attr("class");
             var dot = d3.select(id).attr("class", "dot selected");
-            
+
             app.util.showTooltip(app.util.getProps(id), dot[0][0]);
           })
           .on("mouseout", function(d) {
             if (d3.select(this).attr("class") === "tract inactive") { return false; }
-            
+
             d3.select(this).attr("class", app.currentTractClass);
             d3.select('#d' + String(d.id).replace('.','dot'))
               .attr("class", app.currentDotClass);
@@ -273,37 +273,49 @@ app.run = function() {
     app.chart.append("text")
       .attr("class", "note")
       .text("Each circle represents a census tract.")
-      .attr("x", 400)
-      .attr("y", 275);
+      .attr("x", 395)
+      .attr("y", 230);
 
     app.chart.append("text")
       .attr("class", "note")
       .text("The larger the circle, the higher the percent of")
-      .attr("x", 400)
-      .attr("y", 298);
+      .attr("x", 395)
+      .attr("y", 255);
 
     app.chart.append("text")
       .attr("class", "note")
-      .text("properties in that tract that have recieved one or")
-      .attr("x", 400)
-      .attr("y", 312);
+      .text("properties in that tract that have received one or")
+      .attr("x", 395)
+      .attr("y", 270);
 
     app.chart.append("text")
       .attr("class", "note")
       .text("more of the selected violation(s).")
-      .attr("x", 400)
-      .attr("y", 326);
+      .attr("x", 395)
+      .attr("y", 285);
+
+    app.chart.append("text")
+      .attr("class", "note")
+      .text("The darker the circle, the higher ")
+      .attr("x", 395)
+      .attr("y", 310);
+
+    app.chart.append("text")
+      .attr("class", "note")
+      .text("investor-owned delinquent properties.")
+      .attr("x", 395)
+      .attr("y", 325);
 
     app.chart.append("text")
       .attr("class", "note")
       .text("Tracts with less than 100 properties, ")
-      .attr("x", 400)
+      .attr("x", 395)
       .attr("y", 350);
 
     app.chart.append("text")
       .attr("class", "note")
       .text("or with $0 in median income have been excluded.")
-      .attr("x", 400)
+      .attr("x", 395)
       .attr("y", 365);
 
     // Add the data to the chart.
