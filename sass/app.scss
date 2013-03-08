@@ -114,18 +114,18 @@ body {
   background: #ffffff;
   border: 2px solid #343d42;
   display: none;
-  padding: 3px;
+  padding: 2px;
   width: 250px;
   z-index: 999;
 
   p {
-    margin: 4px 0;
+    margin: 2px 0;
     font-size: 11px;
   }
 }
 
 .arrow_box:after, .arrow_box:before {
-  bottom: 100%;
+  top: 100%;
   border: solid transparent;
   content: " ";
   height: 0;
@@ -136,16 +136,16 @@ body {
 
 .arrow_box:after {
   border-color: rgba(255, 255, 255, 0);
-  border-bottom-color: #ffffff;
-  border-width: 30px;
+  border-top-color: #ffffff;
+  border-width: 10px;
   left: 50%;
-  margin-left: -30px;
+  margin-left: -10px;
 }
 
 .arrow_box:before {
   border-color: rgba(32, 37, 41, 0);
-  border-bottom-color: #202529;
-  border-width: 33px;
+  border-top-color: #202529;
+  border-width: 13px;
   left: 50%;
-  margin-left: -33px;
+  margin-left: -13px;
 }
