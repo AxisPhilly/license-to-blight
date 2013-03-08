@@ -1,15 +1,27 @@
-body {
+#embed {
+  .row {
+    max-width: 750px;
+  }
+
   p {
     font-size: 14px;
   }
 }
 
-.row {
-  max-width: 750px;
+.chart {
+  margin: 10px auto;
+}
+
+.app-container {
+
 }
 
 .chart {
-  margin: 10px auto;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+#map {
+  font-family: Helvetica, Arial, sans-serif;
 }
 
 .axis {
@@ -117,6 +129,7 @@ body {
 }
 
 .arrow_box {
+  font-family: Helvetica, Arial, sans-serif;
   position: absolute;
   background: #ffffff;
   border: 2px solid #343d42;

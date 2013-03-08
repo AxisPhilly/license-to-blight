@@ -1,11 +1,16 @@
-body p {
-  font-size: 14px; }
-
-.row {
+#embed .row {
   max-width: 750px; }
+#embed p {
+  font-size: 14px; }
 
 .chart {
   margin: 10px auto; }
+
+.chart {
+  font-family: Helvetica, Arial, sans-serif; }
+
+#map {
+  font-family: Helvetica, Arial, sans-serif; }
 
 .axis path, .axis line {
   fill: none;
@@ -85,6 +90,7 @@ body p {
     display: none; }
 
 .arrow_box {
+  font-family: Helvetica, Arial, sans-serif;
   position: absolute;
   background: #ffffff;
   border: 2px solid #343d42;
