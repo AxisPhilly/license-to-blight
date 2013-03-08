@@ -254,9 +254,9 @@ app.run = function() {
 
     // Chart
     app.config = {};
-    app.config.margin = {top: 60, right: 40, bottom: 60, left: 40};
+    app.config.margin = {top: 70, right: 40, bottom: 60, left: 40};
     app.config.width = 730 - app.config.margin.left - app.config.margin.right;
-    app.config.height = 530 - app.config.margin.top - app.config.margin.bottom;
+    app.config.height = 540 - app.config.margin.top - app.config.margin.bottom;
 
     app.config.x = d3.scale.linear()
       .domain([0, 130000])
