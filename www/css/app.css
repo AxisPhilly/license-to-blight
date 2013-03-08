@@ -1,5 +1,6 @@
 #embed .row {
-  max-width: 750px; }
+  max-width: 750px;
+  min-width: 750px; }
 #embed p.content {
   font-size: 11px; }
   #embed p.content p {
