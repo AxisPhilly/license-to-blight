@@ -27,11 +27,11 @@ body {
 
 .label {
   font-weight: bold;
-  color: #444;
+  color: #222;
   font-size: 12px;
   text-align: left;
   width: 160px;
-  fill: #444;
+  fill: #222;
 }
 
 .dot {
@@ -93,15 +93,22 @@ body {
   font-size: 12px;
 }
 
-#legend {
+.title {
+  font-size: 13px;
+  fill: #222;
+  font-weight: bold;
+}
+
+.subtitle {
+  fill: #222;
+  font-size: 11px;
+}
+
+.legend {
   font-size: 10px;
 
-  .title {
-    font-size: 12px;
-  }
-
   line {
-    stroke: #000;
+    stroke: #454545;
   }
 
   .last {

@@ -104,29 +104,29 @@ app.util.getClass = function(value) {
 
 app.legendItems = [
   {
-    className: "step-zero",
-    range: "N/A",
-    x: 25
-  },
-  {
-    className: "step-one",
-    range: "0%",
-    x: 62
-  },
-  {
-    className: "step-two",
-    range: "10%",
-    x: 122
+    className: "step-four",
+    range: "30%",
+    y: 309
   },
   {
     className: "step-three",
     range: "20%",
-    x: 186
+    y: 336
   },
   {
-    className: "step-four",
-    range: "30%",
-    x: 250
+    className: "step-two",
+    range: "10%",
+    y: 362
+  },
+  {
+    className: "step-one",
+    range: "0%",
+    y: 390
+  },
+  {
+    className: "step-zero",
+    range: "N/A",
+    y: 410
   }
 ];
 
@@ -134,47 +134,6 @@ app.run = function() {
   $(".violations-container :input").click(function(){
     app.util.updateRadii();
   });
-
-  // Legend
-  app.legend = d3.select("#legend").append("svg")
-      .attr("height", 50)
-      .attr("width", 400)
-      .attr("viewBox", "0 0 400 50")
-      .attr("preserveAspectRatio", "xMidYMid")
-    .selectAll("g")
-      .data(app.legendItems)
-    .enter().append("g");
-
-  app.legend.append("rect")
-      .attr("height", 10)
-      .attr("width", 63)
-      .attr("y", 20)
-      .attr("x", function(d, i) { return i * 65 + 1; })
-      .attr("class", function(d) { return d.className; });
-
-  app.legend.append("line")
-      .attr("x1", function(d, i) { return (i + 1) * 65; })
-      .attr("y1", 20)
-      .attr("x2", function(d, i) { return (i + 1) * 65; })
-      .attr("y2", 35)
-      .attr("class", function(d, i) { if(i === 4) return 'last'; });
-
-  app.legend.append("text")
-      .text(function(d) { return d.range; })
-      .attr("x", function(d, i) { return d.x; })
-      .attr("y", 45)
-      .call(function() {
-
-        if(window.innerWidth < 400) {
-          d3.select("#legend svg").
-            attr("width", window.innerWidth - 20);
-        }
-      });
-
-  d3.select("#legend svg").append("text")
-      .text("Percent of Properties that are Investor-owned and Tax Delinquent")
-      .attr("y", 10)
-      .attr("class", "title");
 
   d3.json("data/tracts-data.json", function(error, data){
     app.data = data;
@@ -250,6 +209,58 @@ app.run = function() {
               .attr("class", app.currentDotClass);
             app.util.hideTooltip();
           });
+
+          // Title
+          app.map.svg.append("text")
+            .text("Philadelphia Census Tracts")
+            .attr("class", "title")
+            .attr("x", 20)
+            .attr("y", 22);
+
+          app.map.svg.append("text")
+            .text("Percent of Properties that are Investor-owned")
+            .attr("class", "subtitle")
+            .attr("x", 20)
+            .attr("y", 37);
+
+          app.map.svg.append("text")
+            .text("and Tax Delinquent")
+            .attr("class", "subtitle")
+            .attr("x", 20)
+            .attr("y", 52);
+
+          // Legend
+          app.legend = app.map.svg
+            .selectAll("g")
+              .data(app.legendItems)
+            .enter().append("g")
+              .attr("class", "legend");
+
+          app.legend.append("rect")
+              .attr("height", 25)
+              .attr("width", 20)
+              .attr("y", function(d, i) { return i * 27 + 280; })
+              .attr("x", 250)
+              .attr("class", function(d) { return d.className; });
+
+          app.legend.append("line")
+              .attr("x1", 250)
+              .attr("y1", function(d, i) { return (i + 1) * 27 + 279; })
+              .attr("x2", 275)
+              .attr("y2", function(d, i) { return (i + 1) * 27 + 279; })
+              .attr("class", function(d, i) { if(i === 4) return 'last'; });
+
+          app.legend.append("text")
+              .text(function(d) { return d.range; })
+              .attr("x", 280  )
+              .attr("y", function(d, i) { return d.y; })
+              .call(function() {
+
+                if(window.innerWidth < 400) {
+                  d3.select("#legend svg").
+                    attr("width", window.innerWidth - 20);
+                }
+              });
     });
 
     // Chart
