@@ -1,7 +1,9 @@
 #embed .row {
   max-width: 750px; }
-#embed p {
-  font-size: 14px; }
+#embed p.content {
+  font-size: 11px; }
+  #embed p.content p {
+    font-size: 11px; }
 
 .chart {
   margin: 10px auto; }
@@ -100,6 +102,8 @@
   z-index: 999; }
   .arrow_box p {
     margin: 2px 0;
+    font-size: 11px; }
+  .arrow_box p.content {
     font-size: 11px; }
 
 .arrow_box:after, .arrow_box:before {
