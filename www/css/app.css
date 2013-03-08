@@ -120,12 +120,12 @@
   border-color: rgba(255, 255, 255, 0);
   border-top-color: #ffffff;
   border-width: 10px;
-  left: 50%;
+  left: 20%;
   margin-left: -10px; }
 
 .arrow_box:before {
   border-color: rgba(32, 37, 41, 0);
   border-top-color: #202529;
   border-width: 13px;
-  left: 50%;
+  left: 20%;
   margin-left: -13px; }

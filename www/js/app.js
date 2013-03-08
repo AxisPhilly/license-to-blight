@@ -40,7 +40,7 @@ app.util.showTooltip = function(props, element) {
       offset = $(element).offset();
 
   $(".arrow_box").css({
-    left: offset.left - 124 + element.r.baseVal.value,
+    left: offset.left - 51 + element.r.baseVal.value,
     top: offset.top - 140
   }).show().find(".content").html(html);
 };
